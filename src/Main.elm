@@ -1,23 +1,18 @@
-module Main exposing (Model, Msg(..), init, main, update, view)
+module Main exposing (Model, init, main, update, view)
 
 import Browser
 import Css exposing (..)
+import Css.Transitions exposing (easeInOut, transition)
 import Html
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (css, href, src)
 import Html.Styled.Events exposing (onClick)
+import Luker exposing (..)
+import Types exposing (..)
 
 
 
 ---- MODEL ----
-
-
-type alias KalenderTekst =
-    { header : String, tekst : String }
-
-
-type alias Luke =
-    { tekst : KalenderTekst, dag : Int }
 
 
 type ValgtLuke
@@ -29,24 +24,6 @@ type alias Model =
     { valgtLuke : ValgtLuke }
 
 
-getLuker : List Luke
-getLuker =
-    List.append
-        [ { dag = 1
-          , tekst =
-                { header = "Hello test", tekst = "Nå får du oppgaven!" }
-          }
-        ]
-        (List.range 2 24 |> List.map (\dag -> getDefaultLuke dag))
-
-
-getDefaultLuke : Int -> Luke
-getDefaultLuke dag =
-    { dag = dag
-    , tekst = { header = "Not implemented", tekst = "Og jul med din glede" }
-    }
-
-
 init : ( Model, Cmd Msg )
 init =
     ( { valgtLuke = Ingen }, Cmd.none )
@@ -54,11 +31,6 @@ init =
 
 
 ---- UPDATE ----
-
-
-type Msg
-    = NoOp
-    | OnClickLuke Luke
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -107,6 +79,11 @@ lukeBoks luke =
             , padding (px 15)
             , flexBasis (px 30)
             , margin (px 5)
+            , cursor pointer
+            , transition
+                [ Css.Transitions.backgroundColor 1500
+                ]
+            , hover [ backgroundColor (rgb 0 255 255) ]
             ]
         , onClick (OnClickLuke luke)
         ]
@@ -120,11 +97,7 @@ oppgaveSeksjon valgtLuke =
             h3 [] [ text "Velg en luke!" ]
 
         LukeValgt luke ->
-            div []
-                [ h3 [] [ text luke.tekst.header ]
-                , h5 [] [ text (String.fromInt luke.dag) ]
-                , p [] [ text luke.tekst.tekst ]
-                ]
+            getLukeView luke
 
 
 
