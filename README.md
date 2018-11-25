@@ -28,3 +28,8 @@ Kjør opp applikasjonen med `elm-app start`. Gå til `localhost:3000` og start d
 
 
 ### Ressurser
+* [Generell elm-test dokumentasjon](https://package.elm-lang.org/packages/elm-community/elm-test/4.2.0/)
+* [Expect modulen](https://package.elm-lang.org/packages/elm-community/elm-test/4.2.0/Expect)
+* [Fuzz-testing](https://package.elm-lang.org/packages/elm-community/elm-test/4.2.0/Fuzz)
+* [List dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/List)
+* [Project Euler](https://package.elm-lang.org/packages/elm-community/elm-test/4.2.0/Fuzz)
