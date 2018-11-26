@@ -1,4 +1,4 @@
-module Julelib.Julelib exposing (TimeValidering(..), antallGaver, dagerIgjenTilJul, gaverPerBarn, julerevers, summerTimer, validerTimer)
+module Julelib.Julelib exposing (TimeValidering(..), antallGaver, gaverPerBarn, julerevers, summerTimer, validerTimer)
 
 -- Luke 2 og 3
 
