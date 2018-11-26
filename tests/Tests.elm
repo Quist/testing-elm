@@ -16,7 +16,4 @@ all =
         [ test "This test should fail" <|
             \_ ->
                 Expect.fail "failed as expected!"
-        , test "Timeføring" <|
-            \_ ->
-                Expect.equal (ForLiteJobbing 1) (validerTimer [ 1 ])
         ]
