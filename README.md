@@ -17,7 +17,8 @@ Praktiserer du TDD kan du også få enklere og penere arkitektur på koden din.
 
 
 ## Prereqs
-Sørg for at du har elm 0.19 installert.
+* elm 0.19 installert.
+* https://github.com/halfzebra/create-elm-app
 
 
 ## Oppgaver
