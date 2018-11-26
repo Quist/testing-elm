@@ -2,10 +2,10 @@
 I denne workshoppen ser vi på testing og elm.
 
 Vi skal:
-* Få ting opp å kjøre
+* Få ting opp å kjøre.
 * Se litt på enkle asserts.
 * Se på suites.
-* Fuzz-testing
+* Fuzz-testing.
 * Project Euler koding ✌️
 
 ## Motivasjon
